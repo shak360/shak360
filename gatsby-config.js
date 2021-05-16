@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "shak360",
+    description: "Personal website for Shakthi Visagan"
     site: "https://shak360.pages.dev",
   },
   plugins: [
@@ -11,7 +12,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: ".${__dirname}/src/images/",
       },
       __key: "images",
     },
@@ -19,7 +20,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: "./src/pages/",
+        path: "${__dirname}/src/pages/",
       },
       __key: "pages",
     },
@@ -27,13 +28,25 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "data",
-        path: "./src/data/",
+        path: "${__dirname}/src/data/",
       },
       __key: "data",
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "md-posts",
+        path: "${__dirname}/src/md-posts/",
+      },
+      __key: "md-posts",
+    },
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-mdx",
-
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
