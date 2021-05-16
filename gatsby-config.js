@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "shak360",
+    site: "https://shak360.pages.dev",
   },
   plugins: [
     "gatsby-plugin-image",
@@ -31,13 +32,6 @@ module.exports = {
       __key: "data",
     },
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        icon: "src/images/icon.png",
-      },
-    },
     "gatsby-plugin-mdx",
 
     {
